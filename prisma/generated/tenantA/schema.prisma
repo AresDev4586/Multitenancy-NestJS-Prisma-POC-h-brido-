@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/tenantA"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL_TENANTA")
+}
+
+model Product {
+  id    Int    @id @default(autoincrement())
+  name  String
+  price Float
+}
